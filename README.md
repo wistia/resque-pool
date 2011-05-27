@@ -137,6 +137,11 @@ their current job) if the manager process disappears before them.
 You can specify an alternate config file by setting the `RESQUE_POOL_CONFIG` or
 with the `--config` command line option.
 
+Experimental Features
+---------------------
+
+See `ExperimentalFeatures.md` for some potentially useful works in progress.
+
 TODO
 -----
 
@@ -145,8 +150,8 @@ See [the TODO list](https://github.com/nevans/resque-pool/issues) at github issu
 Contributors
 -------------
 
+* Jason Haruska from Backupify (pidfile management, memory management, wait for orphaned workers)
 * John Schult (config file can be split by environment)
 * Stephen Celis (increased gemspec sanity)
 * Vincent Agnello, Robert Kamunyori, Paul Kauders; for pairing with me at
-  B'more on Rails Open Source Hack Nights. :)
-
+  [B'more on Rails](http://twitter.com/bmoreonrails) Open Source Hack Nights. :)
