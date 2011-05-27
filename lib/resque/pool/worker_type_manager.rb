@@ -46,6 +46,7 @@ module Resque
         worker = PooledWorker.new(*queue_array)
         worker.verbose = ENV['LOGGING'] || ENV['VERBOSE']
         worker.very_verbose = ENV['VVERBOSE']
+        worker.cant_fork = ENV['CANT_FORK']
         worker
       end
 
