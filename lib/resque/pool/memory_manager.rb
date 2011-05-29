@@ -42,8 +42,10 @@ module Resque
 
       def find_child_pid(parent_pid)
         begin
-          p = `ps --ppid #{parent_pid} -o pid --no-header`.to_i
-          p == 0 ? nil : p
+          if `ps ax -oppid=,pid=` =~ /^\s*#{parent_pid}\s+(\d+)/
+            p = $1.to_i
+            p == 0 ? nil : p
+          end
         rescue Errno::EINTR
           retry
         end
