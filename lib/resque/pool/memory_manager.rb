@@ -96,7 +96,7 @@ module Resque
       def stop_worker(pid, signal=:TERM)
         begin
           worker = Resque.working.find do |w|
-            host, worker_pid, queues = w.id.split(':')
+            host, worker_pid, queues = (w.id.split(':') rescue nil)
             w if worker_pid.to_i == pid.to_i && host == hostname
           end
           if worker
