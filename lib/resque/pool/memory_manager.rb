@@ -7,7 +7,7 @@ module Resque
 
       attr_reader :hard_limit, :soft_limit
 
-      def initialize(hard_limit=250, soft_limit=200)
+      def initialize(hard_limit=512, soft_limit=448)
         @hard_limit = hard_limit
         @soft_limit = soft_limit
       end
